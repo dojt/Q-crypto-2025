@@ -1,0 +1,258 @@
+\documentclass[a4paper,10pt,reqno,nonamelimits]{article}
+%\usepackage[pagebackref,colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+%\usepackage[colorlinks=false]{hyperref}
+
+%\usepackage[top=2cm,bottom=2cm,left=1.5cm,right=7cm,marginparwidth=6.5cm]{geometry}
+\usepackage{a4wide}
+
+%% \usepackage{makeidx}
+%%\usepackage{theorem}
+%%\usepackage{array}
+
+%\usepackage{mathptmx}        % PSNFSS
+%\usepackage{bookman}         % PSNFSS (wide!)
+\usepackage{newcent}         % PSNFSS
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsxtra}
+%\usepackage{stmaryrd}
+%\usepackage{mathabx}
+%\usepackage{eucal}
+\usepackage{mathrsfs}
+\usepackage{nicefrac}\newcommand{\nfrac}{\nicefrac}
+\usepackage{bbold}
+%%\usepackage{bm}
+\usepackage{graphicx}%\graphicspath{ {image/} }
+\usepackage{xcolor}
+% \usepackage[raggedright,IT,hang]{subfigure}
+%\usepackage{url}
+\usepackage{tikz}  \usetikzlibrary{quantikz}
+%\usepackage{wrapfig}
+\usepackage{enumitem}
+% \setlist[enumerate]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1.5em,labelsep=.5em, align=left}
+% \newlist{txtenum}{enumerate}{1}
+% \setlist[txtenum]{leftmargin=0em,itemindent=0em, labelindent=0pt,labelwidth=1em,labelsep=2ex, align=left}
+% \begin{enumerate}[resume,label=(\alph*)]...
+% \begin{enumerate}[label=\arabic*., leftmargin=1em,itemindent=.5em, labelindent=0pt,labelwidth=1em,labelsep=.5em, align=left]
+% * H spacing: leftmargin+itemindent = labelindent+labelwidth+labelsep
+% * Sub-numbers: just take ``label*'' instead of ``label''
+
+\usepackage[norelsize,boxed,noend,linesnumbered]{algorithm2e}\DontPrintSemicolon
+%\SetKwFor{RepeatTimes}{repeat}{times}{endrepeat}
+%\RestyleAlgo{ruled}
+% 'norelsize' takes care of incompatibility with amsart in old version of algorithm2e.
+%             Remove it once the new version is on the system
+% \begin{algorithm}[htbp OR H]
+%   Commands: \TitleOfAlgo{}
+\SetKwInOut{Input}{Input}\SetKwInOut{Output}{Output}\SetKwInOut{Oracle}{Oracle}
+% \For{}{} \Foreach{}{} \If{}{} \eIf{}{}{} \EsleIf{}{} \While{}{} \Return{}
+
+\usepackage{datetime}
+
+\newcounter{mysaveenumi}
+% U S A G E :
+% \setcounter{mysaveenumi}{\theenumi}
+% \begin{enumerate}[(a)]\setcounter{enumi}{\themysaveenumi}
+%   ...
+
+%\newtheorem{fact}[theorem]{Fact}
+% \numberwithin{theorem}{section}
+
+% \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+% \newcommand{\myparagraph}[1]{\mypar #1}
+% \newcommand{\myparagraphwskip}[1]{\smallskip\paragraph{#1}}
+% \newcommand{\claimpf}[1]{\myparagraph{\textit{#1}}}
+% %
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mypar}{\par\medskip\noindent}
+\newcommand{\myparbig}{\par\bigskip\noindent}
+
+\newcommand{\rip}[2]{\langle #1 \mid #2 \rangle}
+\newcommand{\cip}[2]{( #1 \mid #2 )}
+
+\newcommand{\Nm}[1]{\left\| #1 \right\|} % big norm
+\newcommand{\nm}[1]{\lVert #1 \rVert}    % small norm
+
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Img}{Img}
+\DeclareMathOperator{\tr}{tr}
+
+\DeclareMathOperator{\re}{re}
+\DeclareMathOperator{\im}{im}
+
+
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\KK}{\mathbb K}
+
+\renewcommand{\AA}{\mathbb A}
+\newcommand{\BB}{\mathbb B}
+\newcommand{\DD}{\mathbb D}
+\newcommand{\HH}{\mathbb H}
+
+\newcommand{\NN}{\mathbb N}
+\newcommand{\ZZ}{\mathbb Z}
+
+\newcommand{\LL}{\mathbb L}
+\newcommand{\MM}{\mathbb M}
+
+\newcommand{\PP}{\mathbb P}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cG}{\mathcal G}
+
+\newcommand{\One}{\mathbb{1}}
+\newcommand{\one}{\mathbf{1}}
+
+\newcommand{\zero}{\mathbf 0}
+
+\newcommand{\orthogonal}{{\mathrel\bot}}
+
+
+\newcommand{\ANSWER}[1]{\marginpar{#1}}
+
+
+\newcommand{\HWNR}{1}
+\newcommand{\HandOut}{Tue Feb.~25}
+\newcommand{\DueDate}{Tue March~4, 10:00}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\title{\large MTAT.07.024 Quantum Crypto\\[2ex]
+  {\tiny
+    Assoc.~Prof.~Dirk Oliver Theis\\[-1ex]
+    Shahla Novruzova
+  }\\[2ex]
+  \LARGE Homework \# \HWNR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+\date{%
+  \begin{tabular}{rl}
+    Handed out:                 &\HandOut                                           \\[1ex]
+    Due:                        &\DueDate                                           \\
+    {\small As PDF by email to} &{\small\texttt{shahla.novruzova@ut.ee}}            \\
+    {\small\quad subject:}      &{\small\texttt{QCRY-HW\HWNR-}\textit{lastname}}
+  \end{tabular}
+}
+\maketitle
+
+\thispagestyle{empty}
+
+\section{Warm-up: Bell states (20 pts)}
+Verify that the following four 2-qubit states form an ONB:
+\begin{itemize}
+\item $( \ket{00}+\ket{11} )/\sqrt2$
+\item $( \ket{00}-\ket{11} )/\sqrt2$
+\item $( \ket{01}+\ket{10} )/\sqrt2$
+\item $( \ket{01}-\ket{10} )/\sqrt2$
+\end{itemize}
+
+\begin{quotation}\color{blue}
+  (Your calculations here.)
+\end{quotation}
+
+\section{Warm-up: Exponential of Hermitian unitaries (20 pts)}
+Let $A$ be a Hermitian (i.e., $A^\dag=A$) unitary (i.e., $A^\dag=A^{-1}$) operator.  Prove that,
+for all $\theta\in\RR$,
+\begin{equation}
+  \exp(i\theta A) = \cos\theta \cdot \One + i\sin\theta\cdot A.
+\end{equation}
+
+Recall:
+\begin{itemize}
+\item $\exp(X) = \sum_{k=0}^\infty \frac{X^k}{k!}$
+\item $\cos(X) = \sum_{j=0}^\infty \frac{(-1)^j}{(2j)!} X^{2j}$
+\item $\sin(X) = \sum_{j=0}^\infty \frac{(-1)^j}{(2j+1)!} X^{2j+1}$
+\end{itemize}
+
+\begin{quotation}\color{blue}
+  (Your calculation here.)
+\end{quotation}
+
+\section{Efficient communication using entanglement (35 pts)}
+Consider the quantum communication protocol in Fig.~\ref{fig:sdc}.
+
+\begin{figure}[htp]
+  \centering
+  \colorbox{lightgray}{%
+    \begin{minipage}{0.9\linewidth}
+      \begin{enumerate}[start=0,label=\arabic*.]
+      \item Before starting, Alice and Bob share a pair of qubits (i.e., each of them has one qubit) in the state
+        \begin{equation*}
+          \bigl( \ket0\otimes\ket0+\ket1\otimes\ket1 \bigr)/\sqrt2.
+        \end{equation*}
+
+      \item Alice is given 2 bits $x,z \in\{0,1\}$ with the task to send them to Bob.
+      \item Alice does the following: If $x=1$, apply an \texttt{X}-gate  to her qubit.
+      \item Alice does the following: If $z=1$, apply a  \texttt{Z}-gate  to her qubit.
+      \item Alice sends her qubit to Bob.
+      \item Bob now has both qubits.
+      \item Bob applies a \texttt{CNOT} gate with control on the qubit he received from Alice and target
+        on his own qubit.
+      \item Bob applies a Hadamard basis-change gate to Alice's qubit.
+      \item Bob measures both qubits in the computational basis, and sets
+        \begin{itemize}
+        \item $z' :=$ outcome from Alice's qubit
+        \item $x' :=$ outcome from his own qubit.
+        \end{itemize}
+      \end{enumerate}
+    \end{minipage}%
+  }
+  \caption{Efficient communication protocol with prior entanglement: 2 bits = 1 qubit + entangled
+    resource}\label{fig:sdc}
+\end{figure}
+\medskip%
+Recall that
+\begin{itemize}
+\item $X = \ket+\bra+ - \ket-\bra-$ and $Z=\ket0\bra0-\ket1\bra1$;
+\item The unitary for the Hadamard basis change gate is $\ket0\bra+ + \ket1\bra- = \ket+\bra0 + \ket-\bra1$;
+\item ``Apply $U$ to the left-most qubit'' means, apply $U\otimes \One$ to the combined system;
+\item The unitary operator for \texttt{CNOT} with control on the left qubit and target on the right qubit is:
+  \begin{equation*}
+    \ket0\bra0\otimes\One + \ket1\bra1\otimes X.
+  \end{equation*}
+\end{itemize}
+
+
+Verify that the protocol is correct: For every choice of $x,z$, with probability~1, Bob ends up with $x'=x$ and
+$z'=z$.
+
+\begin{quotation}\color{blue}
+  (Your solution here.)
+\end{quotation}
+
+\section{No-cloning theorem (25 pts)}
+Suppose Alice has a qubit in an unknown state.  She wants to send the qubit to Bob, but also keep a copy for
+herself.  Let's say that a ``cloning operator'' is a mapping $E\colon\CC^2\to\CC^2\otimes\CC^2$ with the property
+\begin{equation}\label{eq:cloneing-operator}
+  E\psi = \psi\otimes\psi.
+\end{equation}
+
+Alice wants a cloning operator --- but not being Elon Musk, she's subject the rules of quantum mechanics, so
+her~$E$ must be a \emph{linear} operator.
+
+Prove that linear cloning operators don't exist.
+
+\begin{quotation}\color{blue}
+  (Your solution here.)
+\end{quotation}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% fill-column: 115
+%%% End:
